@@ -1,0 +1,48 @@
+state in reactjs : 
+In React.js, the "state" refers to an object that holds data and determines how a component renders and behaves. 
+It represents the internal state of a component and can be updated over time in response to user actions, network responses, or other events.
+
+The state is a crucial concept in React.js because when the state of a component changes, React re-renders the component to reflect the updated state. 
+This allows for dynamic and interactive user interfaces.
+
+Welcome.js
+import {useState} from 'react'
+
+function Welcome(){
+    const [name,setName] = useState("shubham")
+  
+    // arrow function
+    const handleName = () => {
+        console.log("button pressed");
+        setName("parth")  
+    }
+
+    return(
+        <div>
+
+            <div className='box'>
+                <h1>Welcome {name} </h1>
+            </div>
+            <button onClick={handleName}>Submit</button>
+        </div>
+    );
+}
+
+
+Difference between states and props
+
+ Purpose:
+        State: State represents the internal data of a component. It is used to manage and store data that can change over time, usually as a result of user interactions or other events. Components 			 have control over their own state, and when the state changes, React re-renders the component to reflect the updated state.
+        Props: Props (short for properties) are used to pass data from a parent component to a child component. They are read-only and provide a way for components to communicate and share data with each other. Props are immutable and cannot be modified by the child component receiving them.
+
+ Mutability:
+        State: State is mutable and can be updated using the setState function (in class-based components) or the state setter function returned by the useState hook (in functional components). When the state is updated, React re-renders the component to reflect the new state.
+        Props: Props are immutable and cannot be modified by the child component receiving them. They are passed down from a parent component and remain the same throughout the component's lifecycle.
+
+Ownership:
+        State: Each component manages its own state internally. State belongs to the component in which it is defined and can only be accessed and modified by that component.
+        Props: Props are owned by the parent component that passes them. They are received by child components as read-only values and cannot be modified directly by the child. Instead, if a child component needs to update the data, it can communicate with the parent component through callback functions passed as props.
+
+Scope:
+        State: State is local and specific to the component in which it is defined. It is not accessible by other components unless explicitly passed down as props.
+        Props: Props can be accessed by the child components that receive them. They provide a way for components to share data and pass information between them.
