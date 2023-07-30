@@ -6,7 +6,7 @@ import NotFound from "./components/NotFound";
 import Navbar from "./components/Navbar";
 // import courses from "./components/courses";
 import Courses from "./components/courses";
-
+ 
 
 function App() {
   console.log("app component");
